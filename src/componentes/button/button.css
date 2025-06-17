@@ -1,0 +1,23 @@
+.mega-btn {
+  position: relative;
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.mega-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(25, 0, 255, 0.6);
+}
+
+.mega-btn:active {
+  transform: scale(0.98);
+}
