@@ -1,18 +1,23 @@
-import { Routes, Route} from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import Login from './componentes/login/login'
 import Home from './componentes/home/home'
-import Errors from './componentes/errors/errors'
-import  Register  from './componentes/register/register'
+import Register from './componentes/register/register'
+import ProtectedRoute from './componentes/protected-route/ProtectedRoute'
 
 export default function App() {
-    return (
+  return (
     <Routes>
       <Route path="/register" element={<Register />} />
       <Route path="/" element={<Login />} />
-      <Route path="/home" element={<Home />} />
-      <Route path="/errors" element={<Errors />} />
+      <Route
+        path="/home"
+        element={
+          <ProtectedRoute>
+            <Home />
+          </ProtectedRoute>
+        }
+      />
     </Routes>
 
-    )
-  }
-  
+  )
+}

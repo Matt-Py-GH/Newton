@@ -1,21 +1,25 @@
 //Imports de React
 import { useEffect, useState } from "react"
-import { Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 //Funciones
-import validarPassword from "./validation"
+import validarPassword from "../utils/validation"
 //Componentes
-import Button from "../button/button"
-import Message from "../message/message"
+import Form from "../form/form"
 //Estilos
-import "../login/login.css"
-
 
 
 export default function Register() {
   useEffect(() => {
     document.title = "Register"
+    fetch("api/home", {
+      method: "GET",
+      credentials: "include"
+    }).then(res => {
+      if (res.ok) return navigate("/home")
+    })
   }, [])
 
+  const navigate = useNavigate()
   const [mensajeMostrado, setMensajeMostrado] = useState("")
   const [user, setUser] = useState("")
   const [email, setEmail] = useState("")
@@ -23,7 +27,7 @@ export default function Register() {
   const [repeatPassword, setRepeatPassword] = useState("")
   const error = validarPassword(password)
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.SyntheticEvent) => {
     setMensajeMostrado("")
     e.preventDefault()
     sendUser()
@@ -89,41 +93,49 @@ export default function Register() {
   }
 
   return (
-    <main>
-      <form className="login-form" onSubmit={handleSubmit}>
-        <h2>Registrarse</h2>
-
-        <label htmlFor="user">Usuario</label>
-        <input
-          type="text"
-          id="user"
-          name="user"
-          placeholder="Tu usuario"
-          value={user}
-          onChange={e => setUser(e.target.value)} />
-
-        <label htmlFor="email">E-mail</label>
-        <input type="mail"
-          id="mail"
-          name="mail"
-          placeholder="Tu email"
-          value={email}
-          onChange={e => setEmail(e.target.value)} />
-
-        <label htmlFor="password">Contraseña</label>
-        <input type="password" id="password" name="password" placeholder="Tu contraseña"
-          value={password}
-          onChange={e => setPassword(e.target.value)} />
-
-        <label htmlFor="password">Repite la contraseña</label>
-        <input type="password" id="password" name="password" placeholder="Repite tu contraseña"
-          value={repeatPassword} onChange={e => setRepeatPassword(e.target.value)} />
-
-        <Button type="submit">Register</Button>
-        <Message children={mensajeMostrado} />
-
-        <Link to="/" className="login-register-link">Login</Link>
-      </form>
-    </main>
+    <>
+      <header className='header'></header>
+      <main className="main">
+        <Form
+          fields={[
+            {
+              id: "user",
+              label: "Usuario",
+              type: "text",
+              value: user,
+              onChange: (e) => setUser(e.target.value),
+            },
+            {
+              id: "email",
+              label: "Email",
+              type: "email",
+              value: email,
+              onChange: (e) => setEmail(e.target.value),
+            },
+            {
+              id: "password",
+              label: "Contraseña",
+              type: "password",
+              value: password,
+              onChange: (e) => setPassword(e.target.value),
+            },
+            {
+              id: "confirm",
+              label: "Confirmar Contraseña",
+              type: "password",
+              value: repeatPassword,
+              onChange: (e) => setRepeatPassword(e.target.value),
+            },
+          ]}
+          buttonClick={handleSubmit}
+          buttonText="Registrarse"
+          mensaje={mensajeMostrado}
+          link="/"
+          linkText="¿Ya tenés cuenta? Iniciar sesión"
+          linkClassName="link"
+          title='Registrarse'
+        />
+      </main>
+    </>
   )
 }
