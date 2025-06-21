@@ -38,6 +38,16 @@ npm install
 npm run dev
 ```
 
+### Backend
+LINK: https://github.com/Matt-Py-GH/Newton-server
+
+```bash
+cd Newton-server
+npm install
+npm run dev
+```
+
+
 ## 💡 Author
 
 Mateo Delgado Ugarte 
