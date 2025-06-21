@@ -4,8 +4,10 @@ import { useNavigate } from "react-router-dom"
 //Funciones
 import validarPassword from "../../utils/validation"
 //Componentes
-import Form from "../form/form"
-import Title from "../title/title"
+import Form from "../../componentes/form/form"
+import Title from "../../componentes/title/title"
+// Estilos
+import "./register.css"
 
 
 export default function Register() {
@@ -95,7 +97,7 @@ export default function Register() {
   return (
     <>
       <header className='header'>
-        <Title title={<>Welcome to<br />Newton!</>} />
+        <Title className="title-register" title={<>Welcome to<br />Newton!</>} />
       </header>
       <main className="main">
         <Form

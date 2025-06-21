@@ -1,0 +1,31 @@
+.header-main {
+  height: 70px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid pink;
+  background: linear-gradient(
+    120deg,
+    rgb(163, 50, 238),
+    rgb(208, 158, 255),
+    rgb(255, 150, 246),
+    white,
+    white
+  );
+  animation: fadeIn 0.6s ease-out;
+}
+
+.title-header {
+  margin: 20px;
+  color: white;
+  font-size: 40px;
+}
+
+.buton-header {
+  font-size: 20px;
+  margin: 30px;
+  height: 50px;
+  width: 150px;
+}

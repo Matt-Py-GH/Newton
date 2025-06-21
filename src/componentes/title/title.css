@@ -1,19 +1,6 @@
 .title-container {
-  margin: 170px 15px 0 15px;
   font-size: 45px;
   font-family: monospace;
-  background: linear-gradient(
-    120deg,
-    rgb(163, 50, 238),
-    rgb(208, 158, 255),
-    rgb(255, 150, 246),
-    white,
-    white
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: fadeIn 0.6s ease-out;
-  background-clip: text;
   cursor: default;
 }
 

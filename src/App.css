@@ -1,6 +1,8 @@
-.app {
-  width: 100vw;
-  height: 100vh;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   background: linear-gradient(
     110deg,
     rgb(0, 5, 43),
@@ -10,4 +12,14 @@
     rgb(19, 0, 70),
     rgb(13, 0, 31)
   );
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  box-sizing: border-box;
 }

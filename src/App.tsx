@@ -1,9 +1,9 @@
 import { Routes, Route } from 'react-router-dom'
-import Login from './componentes/login/login'
-import Home from './componentes/home/home'
-import Register from './componentes/register/register'
+import Login from './paginas/login/login'
+import Home from './paginas/home/home'
+import Register from './paginas/register/register'
 import ProtectedRoute from './componentes/protected-route/ProtectedRoute'
-import './app.css'
+import './App.css'
 
 export default function App() {
   return (

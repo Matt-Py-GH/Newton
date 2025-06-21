@@ -1,6 +1,7 @@
 .home {
   height: 100vh;
   width: 100vw;
+  box-sizing: border-box;
   background: linear-gradient(
     110deg,
     rgb(0, 5, 43),
@@ -10,13 +11,17 @@
     rgb(19, 0, 70),
     rgb(13, 0, 31)
   );
+  display: flex;
+  flex-direction: column;
 }
 
-.buton-logout {
-  background-color: #ff5c5c;
-  color: white;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
+.title-home {
+  font-size: 45px;
+  margin-left: 20px;
+  color: aliceblue;
+}
+
+.buton-home {
+  width: 160px;
+  height: 50px;
 }

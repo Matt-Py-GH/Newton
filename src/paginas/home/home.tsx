@@ -1,8 +1,13 @@
+// Imports de CSS
 import "./home.css"
-import { useEffect } from "react"
 
-import Button from '../button/button';
+// Imports de React
+import { useEffect } from "react"
 import { useNavigate } from "react-router-dom";
+
+// Imports de componentes
+import Header from "../../componentes/header/header";
+
 
 const Home = () => {
     useEffect(() => {
@@ -32,9 +37,7 @@ const Home = () => {
     return (
         <>
             <main className="home">
-                <header>
-                    <Button onClick={handleLogout} className="buton-logout" text="Logout" />
-                </header>
+                <Header functionButton={handleLogout} titleClass="title-home" title="Welcome, " textButton="Logout" buttonClass="buton-home" />
             </main>
         </>
     )

@@ -1,7 +1,8 @@
-import Form from '../form/form'
-import Title from '../title/title'
+import Form from '../../componentes/form/form'
+import Title from '../../componentes/title/title'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import './login.css'
 
 
 export default function Login() {
@@ -48,7 +49,7 @@ export default function Login() {
   return (
     <>
       <header className='header'>
-        <Title title="Newton" subtitle="An idea falls from the tree" />
+        <Title className='title-login' title="Newton" />
       </header>
       <main className='main'>
         <Form
