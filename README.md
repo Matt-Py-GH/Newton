@@ -50,7 +50,8 @@ npm run dev
 
 ## 💡 Author
 
-Mateo Delgado Ugarte 
 
+**Mateo Delgado Ugarte**  
 Made with focus, curiosity, and a lot of tea ☕  
-Based in Argentina 🇦🇷
+Based in 🇦🇷 Argentina
+
