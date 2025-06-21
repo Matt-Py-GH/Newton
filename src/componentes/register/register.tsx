@@ -2,10 +2,10 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 //Funciones
-import validarPassword from "../utils/validation"
+import validarPassword from "../../utils/validation"
 //Componentes
 import Form from "../form/form"
-//Estilos
+import Title from "../title/title"
 
 
 export default function Register() {
@@ -82,7 +82,7 @@ export default function Register() {
         return
       }
       else if (data.message === "Usuario o email ya registrado") {
-        setMensajeMostrado("Usuario o email ya registrado")
+        setMensajeMostrado(data.message)
         return
       }
       else {
@@ -94,7 +94,9 @@ export default function Register() {
 
   return (
     <>
-      <header className='header'></header>
+      <header className='header'>
+        <Title title={<>Welcome to<br />Newton!</>} />
+      </header>
       <main className="main">
         <Form
           fields={[

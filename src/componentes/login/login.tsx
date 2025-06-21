@@ -12,12 +12,20 @@ export default function Login() {
       credentials: "include",
     }).then(res => {
       if (res.ok) return navigate("/home")
-    }).catch()
+    }).catch(err => { console.log(err); return navigate("/") })
   }, [])
+
   const [user, setUser] = useState("")
   const [password, setPassword] = useState("")
+  const [mensajeMostrado, setMensajeMostrado] = useState("")
   const navigate = useNavigate()
-  const handleLoginClick = () => {
+  const handleLoginClick = (e: React.SyntheticEvent) => {
+    e.preventDefault()
+    if (!user || !password) {
+      setMensajeMostrado("Por favor, completa todos los campos")
+      return navigate("/")
+    }
+    setMensajeMostrado("")
     fetch("/api/login", {
       method: "POST",
       headers: {
@@ -27,7 +35,7 @@ export default function Login() {
       body: JSON.stringify({ user, password }),
     })
       .then(res => {
-        if (!res.ok) return navigate("/")
+        if (!res.ok) return setMensajeMostrado("Usuario o contraseña incorrectos")
         console.log("Login successful")
         return navigate("/home")
       })
@@ -50,19 +58,19 @@ export default function Login() {
               label: "Usuario",
               type: "text",
               value: user,
-              onChange: (e) => setUser(e.target.value),
+              onChange: e => setUser(e.target.value),
             },
             {
               id: "password",
               label: "Contraseña",
               type: "password",
               value: password,
-              onChange: (e) => setPassword(e.target.value),
+              onChange: e => setPassword(e.target.value),
             },
           ]}
           buttonClick={handleLoginClick}
           buttonText="Iniciar Sesión"
-          mensaje=""
+          mensaje={mensajeMostrado}
           link="/register"
           linkText="¿No tenés cuenta? Regístrate"
           linkClassName="link"

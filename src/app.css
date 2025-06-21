@@ -1,6 +1,6 @@
-.home {
-  height: 100vh;
+.app {
   width: 100vw;
+  height: 100vh;
   background: linear-gradient(
     110deg,
     rgb(0, 5, 43),
@@ -10,13 +10,4 @@
     rgb(19, 0, 70),
     rgb(13, 0, 31)
   );
-}
-
-.buton-logout {
-  background-color: #ff5c5c;
-  color: white;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
 }

@@ -13,19 +13,19 @@ interface InputField {
 
 interface FormProps {
     fields: InputField[];
-    buttonClick: (event: React.SyntheticEvent) => void;
     buttonText: string;
     mensaje?: string;
     link?: string;
     linkText?: string;
     linkClassName?: string;
     title?: string
+    buttonClick: (event: React.SyntheticEvent) => void;
 }
 
 
 export default function Form({
-    fields,
     buttonClick,
+    fields,
     buttonText,
     mensaje,
     link,
@@ -43,7 +43,7 @@ export default function Form({
                 {fields.map((field) => (
                     <div key={field.id} className="inputs">
                         <label htmlFor={field.id}>{field.label}</label>
-                        <input
+                        <input className="input"
                             id={field.id}
                             name={field.id}
                             type={field.type}

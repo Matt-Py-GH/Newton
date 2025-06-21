@@ -1,59 +1,36 @@
-html,
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  background: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-body {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    120deg,
-    rgb(0, 5, 43),
-    rgb(13, 0, 48),
-    rgb(13, 0, 53),
-    rgb(13, 0, 48),
-    rgb(19, 0, 70),
-    rgb(13, 0, 31)
-  );
-  overflow: hidden;
-}
-
 .header {
-  padding: 5px;
-  margin: 30px 0;
-  border-radius: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 0 0 20px 20px;
   width: 100%;
-  height: 60px;
+  height: 50px;
   background: linear-gradient(
     120deg,
     rgb(255, 150, 246),
     rgb(179, 107, 247),
     white
   );
-  font-weight: bold;
+  z-index: 1;
 }
 
 .main {
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  font-family: Arial, sans-serif;
+  font-family: monospace;
   color: white;
-  margin: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   background: linear-gradient(
     120deg,
@@ -64,17 +41,25 @@ body {
     rgb(22, 0, 43),
     rgb(22, 0, 60)
   );
-  padding: 2rem 3rem;
-  border-radius: 20px;
+  padding: 2rem 1rem;
+  border-radius: 20px 0 0 20px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-  width: 320px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+  width: 350px;
+  height: 100vh;
+  max-height: 100vh;
+  overflow-y: auto;
+  position: relative;
+  z-index: 10;
+  animation: fadeIn 0.6s ease-out;
+  box-sizing: border-box;
 }
 
 .form:hover {
   box-shadow: 3px 3px 5px rgba(106, 84, 228, 0.3);
+}
+
+.form > h1 {
+  color: white;
 }
 
 .form h2 {
@@ -105,10 +90,6 @@ body {
   background-color: #003f7f;
 }
 
-h1 {
-  color: white;
-}
-
 .link {
   display: inline-block;
   color: #aad4ff;
@@ -120,15 +101,11 @@ h1 {
   color: #5599ff;
 }
 
-.form {
-  animation: fadeIn 0.6s ease-out;
-}
-
 .inputs {
   width: 300px;
 }
 
-input {
+.input {
   padding: 0.8rem;
   margin-bottom: 1rem;
   border: none;
@@ -137,15 +114,9 @@ input {
   font-size: 1rem;
 }
 
-input:focus {
+.input:focus {
   outline: none;
   box-shadow: 0 0 8px #00f2fe;
-}
-
-.form-message {
-  margin-top: 1rem;
-  color: #ff6b6b;
-  font-weight: bold;
 }
 
 form > div + div {
@@ -153,7 +124,7 @@ form > div + div {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 50px;
+  gap: 30px;
 }
 
 .button {

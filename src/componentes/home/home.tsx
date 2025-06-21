@@ -31,9 +31,11 @@ const Home = () => {
 
     return (
         <>
-            <header>
-                <Button onClick={handleLogout} className="buton-logout" text="Logout" />
-            </header>
+            <main className="home">
+                <header>
+                    <Button onClick={handleLogout} className="buton-logout" text="Logout" />
+                </header>
+            </main>
         </>
     )
 
